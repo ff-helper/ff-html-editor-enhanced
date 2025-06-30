@@ -13,14 +13,14 @@ dependencies:
   flutter:
     sdk: flutter
   # webview plugin
-  flutter_inappwebview: ^6.1.5
+  flutter_inappwebview: ^6.0.0
   # plugin to get webview's visible fraction for keyboard height adjustment
   visibility_detector: ^0.4.0+2
   # plugin to get when the keyboard is hidden via back (Android)
   # or "done" (iOS) to reset the editor's height
   flutter_keyboard_visibility: ^6.0.0
   # plugin to show a color picker for foreground/highlight color
-  flex_color_picker: ^3.6.0
+  flex_color_picker: ^3.4.1
   # plugin to get files from filesystem
   file_picker: 8.1.2
   # plugin to show a scrollable number picker for inserting tables
@@ -43,17 +43,16 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
   assets:
-    - packages/html_editor_enhanced/assets/summernote.html
-    - packages/html_editor_enhanced/assets/summernote-no-plugins.html
-    - packages/html_editor_enhanced/assets/summernote-lite.min.css
-    - packages/html_editor_enhanced/assets/summernote-lite-dark.css
-    - packages/html_editor_enhanced/assets/summernote-lite.min.js
-    - packages/html_editor_enhanced/assets/jquery.min.js
-    - packages/html_editor_enhanced/assets/font/summernote.eot
-    - packages/html_editor_enhanced/assets/font/summernote.ttf
-    - packages/html_editor_enhanced/assets/plugins/summernote-at-mention/summernote-at-mention.js
+    - assets/summernote.html
+    - assets/summernote-no-plugins.html
+    - assets/summernote-lite.min.css
+    - assets/summernote-lite-dark.css
+    - assets/summernote-lite.min.js
+    - assets/jquery.min.js
+    - assets/font/summernote.eot
+    - assets/font/summernote.ttf
+    - assets/plugins/summernote-at-mention/summernote-at-mention.js
   # This section identifies this Flutter project as a plugin project.
   # The 'pluginClass' and Android 'package' identifiers should not ordinarily
   # be modified. They are used by the tooling to maintain consistency when

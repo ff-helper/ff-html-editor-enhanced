@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:html_editor_enhanced/html_editor.dart';
+import 'package:ff_html_editor_enhanced/html_editor.dart';
 import 'package:file_picker/file_picker.dart';
 
 void main() => runApp(HtmlEditorExampleApp());
@@ -84,8 +84,7 @@ class _HtmlEditorExampleState extends State<HtmlEditorExample> {
                   },
                   onDropdownChanged: (DropdownType type, dynamic changed,
                       Function(dynamic)? updateSelectedItem) {
-                    print(
-                        "dropdown '${type.name}' changed to $changed");
+                    print("dropdown '${type.name}' changed to $changed");
                     return true;
                   },
                   mediaLinkInsertInterceptor:

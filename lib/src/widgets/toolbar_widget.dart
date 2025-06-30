@@ -5,8 +5,8 @@ import 'package:flex_color_picker/flex_color_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:html_editor_enhanced/html_editor.dart';
-import 'package:html_editor_enhanced/utils/utils.dart';
+import 'package:ff_html_editor_enhanced/html_editor.dart';
+import 'package:ff_html_editor_enhanced/utils/utils.dart';
 import 'package:numberpicker/numberpicker.dart';
 import 'package:pointer_interceptor/pointer_interceptor.dart';
 
@@ -486,7 +486,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                           color: Theme.of(context)
                               .colorScheme
                               .onSurface
-                              .withValues(alpha: 0.12))),
+                              .withOpacity(0.12))),
           child: CustomDropdownButtonHideUnderline(
             child: CustomDropdownButton<String>(
               elevation: widget.htmlToolbarOptions.dropdownElevation,
@@ -618,7 +618,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                             color: Theme.of(context)
                                 .colorScheme
                                 .onSurface
-                                .withValues(alpha: 0.12))),
+                                .withOpacity(0.12))),
             child: CustomDropdownButtonHideUnderline(
               child: CustomDropdownButton<String>(
                 elevation: widget.htmlToolbarOptions.dropdownElevation,
@@ -700,7 +700,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                             color: Theme.of(context)
                                 .colorScheme
                                 .onSurface
-                                .withValues(alpha: 0.12))),
+                                .withOpacity(0.12))),
             child: CustomDropdownButtonHideUnderline(
               child: CustomDropdownButton<double>(
                 elevation: widget.htmlToolbarOptions.dropdownElevation,
@@ -830,7 +830,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                             color: Theme.of(context)
                                 .colorScheme
                                 .onSurface
-                                .withValues(alpha: 0.12))),
+                                .withOpacity(0.12))),
             child: CustomDropdownButtonHideUnderline(
               child: CustomDropdownButton<String>(
                 elevation: widget.htmlToolbarOptions.dropdownElevation,
@@ -1065,7 +1065,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                     true;
                 if (proceed) {
                   widget.controller.execCommand('foreColor',
-                      argument: (Colors.black.toARGB32() & 0xFFFFFF)
+                      argument: (Colors.black.value & 0xFFFFFF)
                           .toRadixString(16)
                           .padLeft(6, '0')
                           .toUpperCase());
@@ -1079,7 +1079,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                     true;
                 if (proceed) {
                   widget.controller.execCommand('hiliteColor',
-                      argument: (Colors.yellow.toARGB32() & 0xFFFFFF)
+                      argument: (Colors.yellow.value & 0xFFFFFF)
                           .toRadixString(16)
                           .padLeft(6, '0')
                           .toUpperCase());
@@ -1181,7 +1181,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                                 if (t.getIcons()[index].icon ==
                                     Icons.format_color_text) {
                                   widget.controller.execCommand('foreColor',
-                                      argument: (newColor.toARGB32() & 0xFFFFFF)
+                                      argument: (newColor.value & 0xFFFFFF)
                                           .toRadixString(16)
                                           .padLeft(6, '0')
                                           .toUpperCase());
@@ -1192,7 +1192,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                                 if (t.getIcons()[index].icon ==
                                     Icons.format_color_fill) {
                                   widget.controller.execCommand('hiliteColor',
-                                      argument: (newColor.toARGB32() & 0xFFFFFF)
+                                      argument: (newColor.value & 0xFFFFFF)
                                           .toRadixString(16)
                                           .padLeft(6, '0')
                                           .toUpperCase());
@@ -1285,7 +1285,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                             color: Theme.of(context)
                                 .colorScheme
                                 .onSurface
-                                .withValues(alpha: 0.12))),
+                                .withOpacity(0.12))),
             child: CustomDropdownButtonHideUnderline(
               child: CustomDropdownButton<String>(
                 elevation: widget.htmlToolbarOptions.dropdownElevation,
@@ -1507,7 +1507,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                             color: Theme.of(context)
                                 .colorScheme
                                 .onSurface
-                                .withValues(alpha: 0.12))),
+                                .withOpacity(0.12))),
             child: CustomDropdownButtonHideUnderline(
               child: CustomDropdownButton<double>(
                 elevation: widget.htmlToolbarOptions.dropdownElevation,
@@ -1663,7 +1663,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                             color: Theme.of(context)
                                 .colorScheme
                                 .onSurface
-                                .withValues(alpha: 0.12))),
+                                .withOpacity(0.12))),
             child: CustomDropdownButtonHideUnderline(
               child: CustomDropdownButton<String>(
                 elevation: widget.htmlToolbarOptions.dropdownElevation,
@@ -1860,8 +1860,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                                         ElevatedButton(
                                           style: ElevatedButton.styleFrom(
                                               backgroundColor: Theme.of(context)
-                                                  .dialogTheme
-                                                  .backgroundColor,
+                                                  .dialogBackgroundColor,
                                               padding: EdgeInsets.only(
                                                   left: 5, right: 5),
                                               elevation: 0.0),
@@ -1963,8 +1962,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor:
                                                     Theme.of(context)
-                                                        .dialogTheme
-                                                        .backgroundColor,
+                                                        .dialogBackgroundColor,
                                                 padding: EdgeInsets.only(
                                                     left: 5, right: 5),
                                                 elevation: 0.0),
@@ -2064,8 +2062,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                                         true;
                                     if (proceed) {
                                       widget.controller.insertHtml(
-                                          "<img src='data:image/${result!.files.single.extension};base64,$base64Data' data-filename='${result!.files.single.name}' alt="
-                                          "/>");
+                                          "<img src='data:image/${result!.files.single.extension};base64,$base64Data' data-filename='${result!.files.single.name}'/>");
                                     }
                                     Navigator.of(context).pop();
                                   } else {
@@ -2125,8 +2122,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                                         prefixIcon: ElevatedButton(
                                           style: ElevatedButton.styleFrom(
                                               backgroundColor: Theme.of(context)
-                                                  .dialogTheme
-                                                  .backgroundColor,
+                                                  .dialogBackgroundColor,
                                               padding: EdgeInsets.only(
                                                   left: 5, right: 5),
                                               elevation: 0.0),
@@ -2278,8 +2274,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                                         prefixIcon: ElevatedButton(
                                           style: ElevatedButton.styleFrom(
                                               backgroundColor: Theme.of(context)
-                                                  .dialogTheme
-                                                  .backgroundColor,
+                                                  .dialogBackgroundColor,
                                               padding: EdgeInsets.only(
                                                   left: 5, right: 5),
                                               elevation: 0.0),
@@ -2431,8 +2426,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                                         prefixIcon: ElevatedButton(
                                           style: ElevatedButton.styleFrom(
                                               backgroundColor: Theme.of(context)
-                                                  .dialogTheme
-                                                  .backgroundColor,
+                                                  .dialogBackgroundColor,
                                               padding: EdgeInsets.only(
                                                   left: 5, right: 5),
                                               elevation: 0.0),
